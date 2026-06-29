@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Chuyitas Prime · Opciones tipográficas · Ronda 2 editorial</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;0,6..96,700;0,6..96,900;1,6..96,500&family=Gloock&family=Boldonse&family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&family=Khand:wght@400;500;600;700&family=Hanken+Grotesk:wght@400;500;600;700;800&family=Spectral:ital,wght@0,400;0,500;0,600;1,500&family=Archivo:wght@400;500;600;700;800;900&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --carbon:#0c0a09;
+    --carbon-2:#15110d;
+    --crema:#f3e9da;
+    --brasa:#e8631a;
+    --brasa-claro:#f7882e;
+    --rojo:#9e2b1e;
+    --humo:#9a8f81;
+    --linea:rgba(243,233,218,.13);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{overflow-x:clip}
+  body{
+    background:var(--carbon);
+    color:var(--crema);
+    font-family:'Inter',sans-serif;
+    line-height:1.6;
+    overflow-x:clip;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:780px;margin:0 auto;padding:48px 20px 80px}
+
+  .intro{border-bottom:1px solid var(--linea);padding-bottom:28px;margin-bottom:8px}
+  .kicker{
+    font-family:'Inter';font-size:.72rem;letter-spacing:.32em;text-transform:uppercase;
+    color:var(--brasa);font-weight:600;margin-bottom:14px;
+  }
+  .intro h1{font-family:'Bodoni Moda';font-weight:700;font-size:2.2rem;line-height:1.1;letter-spacing:-.01em}
+  .intro p{color:var(--humo);font-size:.95rem;margin-top:14px;max-width:58ch}
+  .intro .ronda{color:var(--brasa-claro);font-weight:600}
+
+  .opt{
+    border:1px solid var(--linea);
+    border-radius:14px;
+    background:linear-gradient(180deg,var(--carbon-2),var(--carbon));
+    padding:30px 26px 28px;
+    margin-top:30px;
+    overflow:hidden;
+  }
+  .opt-head{
+    display:flex;align-items:baseline;justify-content:space-between;
+    gap:12px;flex-wrap:wrap;margin-bottom:6px;
+  }
+  .opt-num{
+    font-family:'Inter';font-weight:600;font-size:.78rem;letter-spacing:.06em;
+    color:var(--carbon);background:var(--brasa);
+    padding:5px 12px;border-radius:40px;white-space:nowrap;
+  }
+  .opt-meta{font-family:'Inter';font-size:.8rem;color:var(--humo);text-align:right}
+  .opt-meta b{color:var(--crema);font-weight:600}
+  .blend{
+    font-family:'Inter';font-size:.74rem;color:var(--humo);
+    border-left:2px solid var(--brasa);padding-left:10px;margin:14px 0 22px;font-style:italic;
+  }
+
+  .specimen{margin:6px 0 22px}
+  .specimen .eyebrow{
+    font-size:.7rem;letter-spacing:.3em;text-transform:uppercase;
+    color:var(--brasa-claro);margin-bottom:12px;
+  }
+  .specimen .titular{line-height:.96;letter-spacing:-.01em}
+  .specimen .titular .light{color:var(--brasa);display:block}
+
+  .demo-row{
+    display:grid;grid-template-columns:minmax(0,1fr);gap:18px;
+    border-top:1px solid var(--linea);padding-top:20px;
+  }
+  @media(min-width:540px){.demo-row{grid-template-columns:auto minmax(0,1fr)}}
+  .price-card{
+    border:1px solid var(--linea);border-radius:10px;padding:14px 16px;
+    background:rgba(0,0,0,.3);min-width:160px;
+  }
+  .price-card .pc-name{font-size:1.1rem;font-weight:700;line-height:1.1}
+  .price-card .pc-desc{font-size:.78rem;color:var(--humo);margin:4px 0 9px}
+  .price-card .pc-price{color:var(--brasa);font-weight:700;font-size:1.2rem}
+  .body-demo p{font-size:.92rem;color:#cabfb2;max-width:42ch}
+  .body-demo .label{
+    font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;color:var(--humo);
+    margin-bottom:6px;
+  }
+  .btn-demo{
+    display:inline-flex;align-items:center;gap:8px;margin-top:16px;
+    background:var(--brasa);color:var(--carbon);font-weight:700;
+    padding:11px 22px;border-radius:40px;font-size:.92rem;border:none;cursor:pointer;
+  }
+
+  /* ===== A · Bodoni Moda + Hanken Grotesk — editorial de moda ===== */
+  .fa .titular{font-family:'Bodoni Moda';font-weight:900;font-size:clamp(2.5rem,11vw,4.8rem);text-transform:none}
+  .fa .titular .light{font-weight:500;font-style:italic;letter-spacing:0}
+  .fa .pc-name{font-family:'Bodoni Moda';font-weight:700}
+  .fa .btn-demo{font-family:'Hanken Grotesk';font-weight:700}
+  .fa .body-demo,.fa .pc-desc{font-family:'Hanken Grotesk'}
+
+  /* ===== B · Gloock + DM Sans — serif con cuerpo, refinada ===== */
+  .fb .titular{font-family:'Gloock';font-weight:400;font-size:clamp(2.4rem,10.5vw,4.6rem);text-transform:none;letter-spacing:-.015em}
+  .fb .pc-name{font-family:'Gloock';font-weight:400}
+  .fb .btn-demo{font-family:'DM Sans';font-weight:600}
+  .fb .body-demo,.fb .pc-desc{font-family:'DM Sans'}
+
+  /* ===== C · Khand (devanagari-grotesk condensada, rarísima en español) + Spectral ===== */
+  .fc .titular{font-family:'Khand';font-weight:700;font-size:clamp(3rem,13vw,5.6rem);text-transform:uppercase;letter-spacing:.005em;line-height:.92}
+  .fc .pc-name{font-family:'Khand';font-weight:600;text-transform:uppercase;letter-spacing:.01em}
+  .fc .btn-demo{font-family:'Khand';font-weight:700;text-transform:uppercase;letter-spacing:.04em}
+  .fc .body-demo,.fc .pc-desc{font-family:'Spectral'}
+  .fc .body-demo p{font-style:normal}
+
+  /* ===== D · Boldonse — display experimental, stop-the-scroll ===== */
+  .fd .titular{font-family:'Boldonse';font-weight:400;font-size:clamp(1.5rem,6.2vw,2.7rem);text-transform:uppercase;line-height:1.18;letter-spacing:-.01em}
+  .fd .titular .light{font-weight:400}
+  .fd .pc-name{font-family:'Boldonse';font-weight:400;font-size:.92rem;text-transform:uppercase;line-height:1.3}
+  .fd .btn-demo{font-family:'Archivo';font-weight:800}
+  .fd .body-demo,.fd .pc-desc{font-family:'Archivo'}
+
+  /* ===== E · Bricolage Grotesque (superfamilia) — sistema único ===== */
+  .fe .titular{font-family:'Bricolage Grotesque';font-weight:800;font-size:clamp(2.6rem,11.5vw,4.8rem);letter-spacing:-.025em;text-transform:none}
+  .fe .titular .light{font-weight:600}
+  .fe .pc-name,.fe .btn-demo{font-family:'Bricolage Grotesque';font-weight:700}
+  .fe .body-demo,.fe .pc-desc{font-family:'Bricolage Grotesque';font-weight:400}
+
+  .footer-note{
+    margin-top:48px;border-top:1px solid var(--linea);padding-top:24px;
+    color:var(--humo);font-size:.85rem;line-height:1.7;
+  }
+  .footer-note b{color:var(--crema)}
+  .footer-note .rec{color:var(--brasa-claro);font-weight:600}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="intro">
+    <div class="kicker">Chuyitas Prime · Dirección tipográfica</div>
+    <h1>Ronda 2 — nivel editorial</h1>
+    <p><span class="ronda">Apuestas menos seguras.</span> Salimos de las grotescas display
+       y entramos a serif de moda (didone), serifs contemporáneas raras y un display
+       experimental. Blend Prism por opción: <i>editorial dominante + retro sonorense +
+       acento brutal</i>. Mismo titular real, precio y cuerpo en cada una.</p>
+  </div>
+
+  <!-- A -->
+  <section class="opt fa">
+    <div class="opt-head">
+      <span class="opt-num">Opción A</span>
+      <div class="opt-meta"><b>Bodoni Moda</b> + Hanken Grotesk<br>didone de revista de moda</div>
+    </div>
+    <div class="blend">60% editorial / 30% lujo / 10% brasa — el contraste extremo de la
+      Bodoni contra el carbón se siente caro y de portada; el cursiva en "en un taco" da el guiño.</div>
+    <div class="specimen">
+      <div class="eyebrow">Carne 100% sonorense</div>
+      <div class="titular">Así sabe Sonora<span class="light">en un taco</span></div>
+    </div>
+    <div class="demo-row">
+      <div class="price-card">
+        <div class="pc-name">Percherón Asada</div>
+        <div class="pc-desc">Aguacate, queso, rajas</div>
+        <div class="pc-price">$220</div>
+      </div>
+      <div class="body-demo">
+        <div class="label">Cuerpo de texto</div>
+        <p>Ingredientes de primera, preparados al momento sobre brasa de carbón.
+           Martes a domingo, 6:30pm–12:30am.</p>
+        <button class="btn-demo">Arma tu pedido</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- B -->
+  <section class="opt fb">
+    <div class="opt-head">
+      <span class="opt-num">Opción B</span>
+      <div class="opt-meta"><b>Gloock</b> + DM Sans<br>serif contemporánea con peso</div>
+    </div>
+    <div class="blend">55% editorial / 30% minimalismo premium / 15% brasa — Gloock tiene
+      hueso y refinamiento a la vez; menos formal que Bodoni, más cálida. Casi nadie la usa.</div>
+    <div class="specimen">
+      <div class="eyebrow">Carne 100% sonorense</div>
+      <div class="titular">Así sabe Sonora<span class="light">en un taco</span></div>
+    </div>
+    <div class="demo-row">
+      <div class="price-card">
+        <div class="pc-name">Percherón Asada</div>
+        <div class="pc-desc">Aguacate, queso, rajas</div>
+        <div class="pc-price">$220</div>
+      </div>
+      <div class="body-demo">
+        <div class="label">Cuerpo de texto</div>
+        <p>Ingredientes de primera, preparados al momento sobre brasa de carbón.
+           Martes a domingo, 6:30pm–12:30am.</p>
+        <button class="btn-demo">Arma tu pedido</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- C -->
+  <section class="opt fc">
+    <div class="opt-head">
+      <span class="opt-num">Opción C</span>
+      <div class="opt-meta"><b>Khand</b> + Spectral<br>condensada de letrero + serif editorial</div>
+    </div>
+    <div class="blend">45% retro letrero / 35% editorial / 20% brutal — Khand es condensada y
+      alta como rótulo de taquería pero con corte limpio; Spectral le da un cuerpo serio de revista.</div>
+    <div class="specimen">
+      <div class="eyebrow">Carne 100% sonorense</div>
+      <div class="titular">Así sabe Sonora<span class="light">en un taco</span></div>
+    </div>
+    <div class="demo-row">
+      <div class="price-card">
+        <div class="pc-name">Percherón Asada</div>
+        <div class="pc-desc">Aguacate, queso, rajas</div>
+        <div class="pc-price">$220</div>
+      </div>
+      <div class="body-demo">
+        <div class="label">Cuerpo de texto</div>
+        <p>Ingredientes de primera, preparados al momento sobre brasa de carbón.
+           Martes a domingo, 6:30pm–12:30am.</p>
+        <button class="btn-demo">Arma tu pedido</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- D -->
+  <section class="opt fd">
+    <div class="opt-head">
+      <span class="opt-num">Opción D</span>
+      <div class="opt-meta"><b>Boldonse</b> + Archivo<br>display experimental · stop-the-scroll</div>
+    </div>
+    <div class="blend">50% brutal / 30% maximalismo / 20% retro — la más arriesgada. Boldonse
+      es pesada y rara, hace que el titular se vea como cartel impreso. Solo para titulares cortos.</div>
+    <div class="specimen">
+      <div class="eyebrow">Carne 100% sonorense</div>
+      <div class="titular">Así sabe Sonora<span class="light">en un taco</span></div>
+    </div>
+    <div class="demo-row">
+      <div class="price-card">
+        <div class="pc-name">Percherón Asada</div>
+        <div class="pc-desc">Aguacate, queso, rajas</div>
+        <div class="pc-price">$220</div>
+      </div>
+      <div class="body-demo">
+        <div class="label">Cuerpo de texto</div>
+        <p>Ingredientes de primera, preparados al momento sobre brasa de carbón.
+           Martes a domingo, 6:30pm–12:30am.</p>
+        <button class="btn-demo">Arma tu pedido</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- E -->
+  <section class="opt fe">
+    <div class="opt-head">
+      <span class="opt-num">Opción E</span>
+      <div class="opt-meta"><b>Bricolage Grotesque</b> (superfamilia)<br>un solo tipo, todo el sistema</div>
+    </div>
+    <div class="blend">60% editorial contemporáneo / 25% minimalismo / 15% brasa — una sola
+      familia con carácter carga titular, precio y cuerpo. Cohesión total, cero choque. La más segura de esta ronda.</div>
+    <div class="specimen">
+      <div class="eyebrow">Carne 100% sonorense</div>
+      <div class="titular">Así sabe Sonora<span class="light">en un taco</span></div>
+    </div>
+    <div class="demo-row">
+      <div class="price-card">
+        <div class="pc-name">Percherón Asada</div>
+        <div class="pc-desc">Aguacate, queso, rajas</div>
+        <div class="pc-price">$220</div>
+      </div>
+      <div class="body-demo">
+        <div class="label">Cuerpo de texto</div>
+        <p>Ingredientes de primera, preparados al momento sobre brasa de carbón.
+           Martes a domingo, 6:30pm–12:30am.</p>
+        <button class="btn-demo">Arma tu pedido</button>
+      </div>
+    </div>
+  </section>
+
+  <div class="footer-note">
+    <b>Mi lectura (Prism Coherence Check):</b> para un nivel editorial real con alma sonorense,
+    la <span class="rec">A (Bodoni Moda)</span> es la más de portada de revista, y la
+    <span class="rec">C (Khand + Spectral)</span> es la que mejor cruza "letrero de taquería"
+    con "editorial serio" — esa es mi favorita para esta marca. La D es la más rebelde si quieres
+    algo que de plano nadie más tenga.<br><br>
+    Dime la letra (o mézclalas: "titular de la C, cuerpo de la A"). Con tu elección la fijo como
+    token y construyo el sitio completo.
+  </div>
+
+</div>
+</body>
+</html>

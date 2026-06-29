@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#0c0a09" />
+  <meta name="description" content="Chuyitas Prime · Tacos & Burros. Carne asada sonorense al carbón en Heroica Guaymas. Arma tu pedido y mándalo por WhatsApp." />
+  <title>Chuyitas Prime · Tacos & Burros</title>
+
+  <!-- Fuentes: Opción B — Gloock (display) + DM Sans (cuerpo) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Gloock&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind Play CDN (utilidades; sin build, corre en GitHub Pages) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: { paper: '#0c0a09', 'paper-2': '#15110d', ink: '#f3e9da', brasa: '#e8631a' },
+          fontFamily: { display: ['Gloock', 'serif'], body: ['DM Sans', 'sans-serif'] },
+        },
+      },
+    };
+  </script>
+
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+  <!-- NAV · N6 newspaper masthead -->
+  <header class="masthead">
+    <div class="wrap masthead__inner">
+      <span class="masthead__issue left">Heroica Guaymas, Son.</span>
+      <a href="#top" class="masthead__brand">Chuyitas <b>Prime</b></a>
+      <span class="masthead__issue right">Mar–Dom · 6:30pm–12:30am</span>
+    </div>
+    <div class="masthead__rule"></div>
+  </header>
+
+  <main id="top">
+
+    <!-- HERO -->
+    <section class="hero">
+      <video class="hero__video" autoplay muted loop playsinline poster="media/TopSirloin.PNG">
+        <source src="media/AsadorFondo.MOV" type="video/mp4" />
+      </video>
+      <div class="wrap hero__inner">
+        <p class="eyebrow hero__eyebrow">Carne 100% sonorense · al carbón</p>
+        <h1 class="display hero__title">Así sabe Sonora<span class="brasa">en un taco.</span></h1>
+        <p class="hero__lede">
+          Ingredientes de primera, preparados al momento sobre brasa de carbón.
+          Arma tu pedido aquí y mándalo directo por WhatsApp.
+        </p>
+        <div class="hero__cta">
+          <button class="btn-brasa" type="button" data-scroll="#carta-sec">Arma tu pedido</button>
+          <button class="link-cta" type="button" data-scroll="#catering">Catering y eventos <span aria-hidden="true">→</span></button>
+        </div>
+      </div>
+    </section>
+
+    <!-- CARTA · wizard de 3 pasos -->
+    <section id="carta-sec">
+      <div class="wrap">
+        <!-- indicador de pasos -->
+        <ol class="pasos" id="pasos" aria-label="Pasos del pedido">
+          <li class="pasos__item is-active" data-paso="1"><span class="pasos__n">1</span> Platillos</li>
+          <li class="pasos__item" data-paso="2"><span class="pasos__n">2</span> Bebidas</li>
+          <li class="pasos__item" data-paso="3"><span class="pasos__n">3</span> Extras</li>
+        </ol>
+
+        <!-- Paso 1 · Platillos -->
+        <div class="paso" id="paso-1" data-paso="1">
+          <div class="sec-head">
+            <p class="eyebrow">Paso 1 · Platillos</p>
+            <h2 class="display">Toca, arma y manda.</h2>
+            <p>Elige una foto; ahí adentro escoges tipo, cantidad y notas con su precio.</p>
+          </div>
+          <div class="carta" id="carta"><!-- fotos inyectadas por js/ui.js --></div>
+        </div>
+
+        <!-- Paso 2 · Bebidas -->
+        <div class="paso" id="paso-2" data-paso="2" hidden>
+          <div class="sec-head">
+            <p class="eyebrow">Paso 2 · Bebidas</p>
+            <h2 class="display">¿Con qué la bajas?</h2>
+            <p>Opcional. Agrega lo que quieras o salta este paso.</p>
+          </div>
+          <div class="extras-grid" id="bebidas-grid"><!-- inyectadas por js/ui.js --></div>
+        </div>
+
+        <!-- Paso 3 · Extras -->
+        <div class="paso" id="paso-3" data-paso="3" hidden>
+          <div class="sec-head">
+            <p class="eyebrow">Paso 3 · Extras</p>
+            <h2 class="display">El toque final.</h2>
+            <p>Opcional. Guacamole, salsas y lo que se antoje.</p>
+          </div>
+          <div class="extras-grid" id="extras-grid"><!-- inyectadas por js/ui.js --></div>
+        </div>
+
+        <!-- navegación del wizard -->
+        <div class="paso-nav">
+          <button class="nav-flecha" type="button" id="paso-atras" aria-label="Paso anterior" hidden>
+            <span aria-hidden="true">←</span></button>
+          <button class="nav-flecha nav-flecha--sig" type="button" id="paso-siguiente" aria-label="Siguiente paso">
+            <span aria-hidden="true">→</span></button>
+          <button class="btn-brasa paso-nav__fin" type="button" id="paso-finalizar" data-open-drawer hidden>
+            Revisar pedido</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- CATERING -->
+    <section class="catering" id="catering">
+      <div class="wrap">
+        <div class="sec-head">
+          <p class="eyebrow">Eventos</p>
+          <h2 class="display">Lleva la brasa a tu fiesta.</h2>
+          <p>Paquetes para grupos desde 30 personas. Cotiza por WhatsApp.</p>
+        </div>
+        <div class="catering-grid" id="catering-grid"><!-- paquetes inyectados --></div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER · Ft1 mast-headed -->
+  <footer class="footer">
+    <div class="wrap">
+      <p class="footer__brand">Chuyitas <b>Prime</b></p>
+      <div class="footer__meta">
+        <span>Blvd. Luis Encinas Johnson 250, Villa de Miramar, 85455 Heroica Guaymas, Son.</span>
+        <a href="tel:+16232399551">+1 623-239-9551</a>
+        <span>Martes a domingo · 6:30pm a 12:30am</span>
+      </div>
+      <div class="footer__bottom">
+        <span>© 2026 Chuyitas Prime · Tacos &amp; Burros</span>
+        <span>Hecho con brasa en Sonora</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Carrito: FAB + scrim + drawer -->
+  <button class="cart-fab" id="cart-fab" type="button" aria-label="Ver tu pedido">
+    Tu pedido <span class="cart-fab__count is-empty" id="cart-count">0</span>
+  </button>
+  <div class="scrim" id="scrim"></div>
+  <aside class="drawer" id="drawer" role="dialog" aria-modal="true" aria-label="Tu pedido" aria-hidden="true">
+    <div class="drawer__head">
+      <h2>Tu pedido</h2>
+      <button class="drawer__close" type="button" aria-label="Cerrar">×</button>
+    </div>
+    <div class="drawer__cuerpo" id="drawer-cuerpo"></div>
+    <div class="drawer__pie" id="drawer-pie"></div>
+  </aside>
+
+  <!-- Modal por categoría -->
+  <div class="modal" id="modal" aria-hidden="true"></div>
+
+  <!-- Lógica: data → cart → whatsapp → ui -->
+  <script src="js/data.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/whatsapp.js"></script>
+  <script src="js/ui.js"></script>
+</body>
+</html>
