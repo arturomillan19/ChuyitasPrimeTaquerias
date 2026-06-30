@@ -467,7 +467,7 @@ button { font-family: inherit; cursor: pointer; }
 
 /* ====== Barra inferior fija · CTA persistente ====== */
 .cta-bar {
-  position: fixed; left: 0; right: 0; bottom: 20em; z-index: 70;
+  position: fixed; left: 0; right: 0; bottom: 0; z-index: 70;
   padding: var(--space-sm) var(--space-md) calc(env(safe-area-inset-bottom) + var(--space-sm));
   background: oklch(14% 0.012 60 / .92); backdrop-filter: blur(10px);
   border-top: 1px solid var(--color-line);
@@ -477,7 +477,7 @@ button { font-family: inherit; cursor: pointer; }
 .cta-bar.is-hidden { transform: translateY(110%); }
 .cta-bar__btn { width: 100%; justify-content: center; font-size: 1.05rem; min-height: 52px; }
 @media (min-width: 760px) {
-  .cta-bar { left: auto; right: var(--space-lg); bottom: 5em; padding: 0; background: none; backdrop-filter: none; border: none; }
+  .cta-bar {display:none; left: auto; right: var(--space-lg); bottom: 5em; padding: 0; background: none; backdrop-filter: none; border: none; }
   .cta-bar__btn { width: auto; box-shadow: 0 10px 30px oklch(64% 0.17 47 / .35); }
 }
 
