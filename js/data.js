@@ -33,7 +33,7 @@ Chuyitas.MENU = [
     id: 'quesadillas',
     nombre: 'Quesadillas',
     desc: 'Tortilla de harina, queso derretido.',
-    img: 'media/quesadilla.png',
+    img: 'Media/quesadilla.png',
     rango: '$80 – $150',
     variantes: [
       { id: 'asada', nombre: 'Asada', precio: 100, desc: 'Queso derretido, carne asada' },
@@ -46,7 +46,7 @@ Chuyitas.MENU = [
     id: 'percherones',
     nombre: 'Burros Percherones',
     desc: 'Mayonesa, aguacate, tomate, queso y rajas. Se les puede agregar tripa, queso extra o tocino.',
-    img: 'media/BurroMixto.jpg',
+    img: 'Media/BurroMixto.jpg',
     rango: '$180 – $220',
     variantes: [
       { id: 'asada', nombre: 'Asada', precio: 220, desc: 'Carne asada' },
