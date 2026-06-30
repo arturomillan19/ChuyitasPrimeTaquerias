@@ -423,9 +423,9 @@ Chuyitas.ui = (function () {
     renderCarta();
     renderItemsSimples('bebidas-grid', Chuyitas.BEBIDAS, 'Bebidas');
     renderItemsSimples('extras-grid', Chuyitas.EXTRAS, 'Extras');
-    renderCatering();
     bindResumenEventos();
     initCtaBar();
+    initBurger();
 
     // Al cambiar el carrito: si estamos en pagar, re-render; siempre refrescamos el bottom.
     Chuyitas.cart.onChange(() => {
@@ -443,19 +443,26 @@ Chuyitas.ui = (function () {
     document.querySelectorAll('.pasos__item').forEach((li) =>
       li.addEventListener('click', () => irAPaso(+li.getAttribute('data-paso'))));
 
-    // Enlaces de scroll suave (hero/footer → catering)
-    document.querySelectorAll('[data-scroll]').forEach((a) =>
-      a.addEventListener('click', (e) => {
-        e.preventDefault();
-        const t = document.querySelector(a.getAttribute('data-scroll'));
-        if (t) t.scrollIntoView({ behavior: 'smooth' });
-      }));
-
     document.addEventListener('keydown', (e) => {
       if (e.key !== 'Escape') return;
       if ($('#modal').classList.contains('is-open')) cerrarSheet();
       else if ($('#pedido').classList.contains('is-open')) cerrarPedido();
+      else if ($('#burger') && $('#burger').getAttribute('aria-expanded') === 'true') toggleBurger(false);
     });
+  }
+
+  /* ---------- Burger menu ---------- */
+  function toggleBurger(abrir) {
+    const b = $('#burger'); const menu = $('#nav-menu');
+    if (!b || !menu) return;
+    const open = abrir != null ? abrir : b.getAttribute('aria-expanded') !== 'true';
+    b.setAttribute('aria-expanded', open ? 'true' : 'false');
+    menu.hidden = !open;
+  }
+  function initBurger() {
+    const b = $('#burger');
+    if (!b) return;
+    b.addEventListener('click', () => toggleBurger());
   }
 
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#0c0a09" />
+  <meta name="description" content="Catering y eventos · Chuyitas Prime. Paquetes de tacos de asada sonorense para grupos desde 30 personas en Heroica Guaymas." />
+  <title>Catering y eventos · Chuyitas Prime</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Gloock&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&display=swap" rel="stylesheet" />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: { extend: {
+        colors: { paper: '#0c0a09', 'paper-2': '#15110d', ink: '#f3e9da', brasa: '#e8631a' },
+        fontFamily: { display: ['Gloock', 'serif'], body: ['DM Sans', 'sans-serif'] },
+      } },
+    };
+  </script>
+
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+  <!-- NAV · marca izq · volver der -->
+  <header class="masthead">
+    <div class="wrap masthead__inner">
+      <a href="index.html" class="masthead__brand">Chuyitas <b>Prime</b></a>
+      <a href="index.html" class="masthead__volver">← Volver</a>
+    </div>
+    <div class="masthead__rule"></div>
+  </header>
+
+  <main id="top">
+    <section class="eventos">
+      <div class="wrap">
+        <div class="sec-head">
+          <p class="eyebrow">Eventos · Catering</p>
+          <h1 class="display">Lleva la brasa a tu fiesta.</h1>
+          <p>Paquetes para grupos desde 30 personas. Elige uno y cotízalo directo por WhatsApp.</p>
+        </div>
+        <div class="catering-grid" id="catering-grid"><!-- paquetes inyectados --></div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER · Ft1 mast-headed -->
+  <footer class="footer">
+    <div class="wrap">
+      <p class="footer__brand">Chuyitas <b>Prime</b></p>
+      <div class="footer__meta">
+        <span>Blvd. Luis Encinas Johnson 250, Villa de Miramar, 85455 Heroica Guaymas, Son.</span>
+        <a href="tel:+16232399551">+1 623-239-9551</a>
+        <span>Martes a domingo · 6:30pm a 12:30am</span>
+        <a class="footer__catering" href="index.html">← Volver al inicio</a>
+      </div>
+      <div class="footer__bottom">
+        <span>© 2026 Chuyitas Prime · Tacos &amp; Burros</span>
+        <span>Hecho con brasa en Sonora</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/whatsapp.js"></script>
+  <script>
+    // Render de los paquetes de catering (reusa Chuyitas.CATERING y el checkout a WhatsApp).
+    (function () {
+      var peso = function (n) { return '$' + n.toLocaleString('es-MX'); };
+      var cont = document.getElementById('catering-grid');
+      if (!cont || !window.Chuyitas) return;
+      cont.innerHTML = Chuyitas.CATERING.map(function (p) {
+        return '<article class="paquete">' +
+          '<p class="paquete__personas">Hasta ' + p.personas + ' personas</p>' +
+          '<p class="paquete__precio">' + peso(p.precio) + '<small> + IVA</small></p>' +
+          '<ul class="paquete__incluye">' + p.incluye.map(function (x) { return '<li>' + x + '</li>'; }).join('') + '</ul>' +
+          '<button class="btn-brasa" type="button" data-catering="' + p.personas + '">Cotizar</button>' +
+        '</article>';
+      }).join('');
+      cont.addEventListener('click', function (e) {
+        var b = e.target.closest('[data-catering]');
+        if (b) Chuyitas.whatsapp.cotizarCatering(b.getAttribute('data-catering'));
+      });
+    })();
+  </script>
+</body>
+</html>
